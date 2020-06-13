@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         mybutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                adapter.addItem(Integer.parseInt(myedittext.getText().toString()));
+                adapter.addItem(Integer.parseInt((myedittext.getText().toString())));
                 adapter.notifyDataSetChanged();
             }
         });
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         mylistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("memes"," "+position+" "+id+adapter.getItem(position));
+                Log.d("memes"," "+position+" "+id);
 //                adapter.getItem(position);
 //                view.setBackgroundColor(Color.GREEN);
 //                Log.d("color"," "+view.getBackground().toString());
