@@ -18,7 +18,7 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<String> myarray= new ArrayList<String>(Arrays.asList("1","2","3","4","5","6","7","8","9","1","1","1","2","1","3","1","4","1","5","1","6","1","7","1","8"));
+    ArrayList<Integer> myarray= new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7,8,9,1,1,1,2,1,3,1,4,1,5,1,6,1,7,1,8));
     private GridView mylistview;
     private EditText myedittext;
     private Button mybutton;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         mybutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                adapter.addItem(myedittext.getText().toString());
+                adapter.addItem(Integer.parseInt(myedittext.getText().toString()));
                 adapter.notifyDataSetChanged();
             }
         });
@@ -55,14 +55,14 @@ public class MainActivity extends AppCompatActivity {
         mylistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("memes"," "+position+" "+id);
+                Log.d("memes"," "+position+" "+id+adapter.getItem(position));
 //                adapter.getItem(position);
 //                view.setBackgroundColor(Color.GREEN);
 //                Log.d("color"," "+view.getBackground().toString());
 //                    adapter.updateColor(view);
 //                TextView view1= (TextView) adapter.getView(position,mylistview,null);
 //                view1.setBackgroundColor(1);
-                adapter.updateItem(position,"");
+                adapter.updateItem(position,0);
                 adapter.compare(view,position,id);
                 view.requestFocus();
 //                view.

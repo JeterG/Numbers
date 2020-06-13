@@ -13,18 +13,18 @@ import java.util.Collections;
 
 public class MyListAdapter extends BaseAdapter {
 
-    private ArrayList<String> myarray;
+    private ArrayList<Integer> myarray;
     private View comp1=null;
     private View comp2=null;
     private int position1;
     private int position2;
 
 
-    public MyListAdapter(ArrayList<String> myarray) {
+    public MyListAdapter(ArrayList<Integer> myarray) {
         this.myarray = myarray;
     }
 
-    public void addItem(String entry){
+    public void addItem(Integer entry){
         myarray.add(entry);
 
     }
@@ -43,7 +43,7 @@ public class MyListAdapter extends BaseAdapter {
         }
     }
 
-    public void updateItem(int position,String entry){
+    public void updateItem(int position,Integer entry){
         myarray.set(position,entry);
     }
 
@@ -81,7 +81,7 @@ public class MyListAdapter extends BaseAdapter {
 
 
     }
-    public void check(ArrayList<String> myarray){
+    public void check(ArrayList<Integer> myarray){
         int capacity=myarray.size();
         ArrayList<String> myarray2;
         for(int i=0;i<capacity;i++){
